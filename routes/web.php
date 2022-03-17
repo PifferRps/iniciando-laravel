@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ClientsController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -12,7 +13,12 @@ use Illuminate\Support\Facades\Route;
 | routes are loaded by the RouteServiceProvider within a group which
 | contains the "web" middleware group. Now create something great!
 |
+
+
 */
+Route::get('env', function(){
+    var_dump($_ENV);
+});
 
 Route::get('/', function () {
     return view('welcome');
@@ -20,19 +26,19 @@ Route::get('/', function () {
 Route::get('/cad', function () {
     return view('cadastro');
 });
-Route::get('/blade', function () {
-    $nome = "luiz";
-    $variavel1 = "valor";
-    return view(view:'teste')
-    ->with('nome', $nome)
-    ->with('variavel1', $variavel1);
-    //
-});
+Route::get('controller/blade/cadastro' , 'App\Http\Controllers\ClientsController@cadastrar');
+//ClientsController::class.'@cadastrar'); Outra forma de indicar o controller
 
-Route::get('/for/{value}', function ($value) {
-    return view('cadastro');
+
+
+
+
+
+/*Route::get('/for/{value}', function ($value) {
+    return view('for')
+    ->with('value', $value);
 });
-/*Route::get('/cliente', function(){
+Route::get('/cliente', function(){
     $csrfToken = csrf_token();
     $html = <<<HTML
     <html>
