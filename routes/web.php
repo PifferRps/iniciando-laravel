@@ -17,7 +17,17 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
-Route::get('/cliente', function(){
+Route::get('/cad', function () {
+    return view('cadastro');
+});
+Route::get('/blade', function () {
+    $nome = "luiz";
+    $variavel1 = "valor";
+    return view(view:'teste')
+    ->with('nome', $nome)
+    ->with('variavel1', $variavel1);
+});
+/*Route::get('/cliente', function(){
     $csrfToken = csrf_token();
     $html = <<<HTML
     <html>
@@ -35,4 +45,4 @@ Route::get('/cliente', function(){
 });
 Route::post('/cliente/cadastrar', function (Request $request) {
     echo $request->get('nome');
-});
+});*/
