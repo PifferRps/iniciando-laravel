@@ -26,6 +26,7 @@ Route::get('/blade', function () {
     return view(view:'teste')
     ->with('nome', $nome)
     ->with('variavel1', $variavel1);
+    //
 });
 /*Route::get('/cliente', function(){
     $csrfToken = csrf_token();
