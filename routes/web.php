@@ -28,6 +28,10 @@ Route::get('/blade', function () {
     ->with('variavel1', $variavel1);
     //
 });
+
+Route::get('/for/{value}', function ($value) {
+    return view('cadastro');
+});
 /*Route::get('/cliente', function(){
     $csrfToken = csrf_token();
     $html = <<<HTML
