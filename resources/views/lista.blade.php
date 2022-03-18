@@ -1,7 +1,7 @@
 <html>
     <head>
         <body>
-            <p>Listar Cliente</p>
+            <p>Listar Clientes</p>
             <a href="form">Novo CLiente</a>
             <table>
                 <thead>
@@ -20,7 +20,8 @@
                         <td>{{$clients->nome}}</td>
                         <td>{{$clients->email}}</td>
                         <td>
-                            <a href="{{"{$clients->id}/editar"}}">Editar</a>
+                            <a href="{{"{$clients->id}/editar"}}">Editar</a> |
+                            <a href="{{"{$clients->id}/excluir"}}">Excluir</a>
                         </td>
                     </tr>
                 @endforeach

@@ -37,6 +37,8 @@ Route::get('{id}/editar' , 'App\Http\Controllers\ClientsController@formEditar');
 
 Route:: post('{id}/editar' , 'App\Http\Controllers\ClientsController@editar')
 ;
+Route:: get('{id}/excluir' , 'App\Http\Controllers\ClientsController@excluir')
+;
 
 
 

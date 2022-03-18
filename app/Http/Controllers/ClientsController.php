@@ -61,8 +61,13 @@ public function editar(Request $request,$id){
         ->with('nome', $nome)
         ->with('variavel1', $variavel1);
     }*/
-    public function excluir(){
-
+    public function excluir(Request $request,$id){
+        $cliente = Clients::find($id);
+        if(!$cliente){
+            abort(code:404);
+        }
+        $cliente->delete();
+        return redirect()->to('lista');
     }
     
 }
