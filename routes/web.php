@@ -27,6 +27,11 @@ Route::get('/cad', function () {
     return view('cadastro');
 });
 Route::get('controller/blade/cadastro' , 'App\Http\Controllers\ClientsController@cadastrar');
+Route::get('lista' , 'App\Http\Controllers\ClientsController@listar');
+
+Route::get('form' , 'App\Http\Controllers\ClientsController@formCadastrar');
+
+Route:: post('cadastro' , 'App\Http\Controllers\ClientsController@cadastrar');
 //ClientsController::class.'@cadastrar'); Outra forma de indicar o controller
 
 
