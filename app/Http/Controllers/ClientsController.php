@@ -15,6 +15,30 @@ class ClientsController extends Controller
 
     }
 
+
+
+    public function formEditar($id){
+        $cliente = Clients::find($id);
+        if(!$cliente){
+            abort(code:404);
+        }
+        return view('edit', compact('cliente'));
+}
+
+public function editar(Request $request,$id){
+    $cliente = Clients::find($id);
+    if(!$cliente){
+        abort(code:404);
+    }
+    
+   
+    $cliente->nome = $request->nome;
+    $cliente->email = $request->email;
+    $cliente->save();
+    return redirect()->to('lista');
+
+}
+
     public function formCadastrar(){
             return view('cliente');
     }
@@ -40,7 +64,5 @@ class ClientsController extends Controller
     public function excluir(){
 
     }
-    public function editar(){
-
-    }
+    
 }

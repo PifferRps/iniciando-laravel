@@ -9,6 +9,7 @@
                     <th>ID</th>
                     <th>Nome</th>
                     <th>Email</th>
+                    <th>Ações</th>
 
                 </tr>
             </thead>
@@ -18,6 +19,9 @@
                         <td>{{$clients->id}}</td>
                         <td>{{$clients->nome}}</td>
                         <td>{{$clients->email}}</td>
+                        <td>
+                            <a href="{{"{$clients->id}/editar"}}">Editar</a>
+                        </td>
                     </tr>
                 @endforeach
             </body>

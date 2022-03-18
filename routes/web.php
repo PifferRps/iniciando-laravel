@@ -33,7 +33,10 @@ Route::get('form' , 'App\Http\Controllers\ClientsController@formCadastrar');
 
 Route:: post('cadastro' , 'App\Http\Controllers\ClientsController@cadastrar');
 //ClientsController::class.'@cadastrar'); Outra forma de indicar o controller
+Route::get('{id}/editar' , 'App\Http\Controllers\ClientsController@formEditar');
 
+Route:: post('{id}/editar' , 'App\Http\Controllers\ClientsController@editar')
+;
 
 
 
