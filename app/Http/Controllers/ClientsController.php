@@ -9,9 +9,9 @@ class ClientsController extends Controller
 {
     public function listar(){
         $cliente = Clients::all();
-        return view('lista', compact('cliente'));
+        
 
-    
+        return view('lista', compact('cliente'));   
 
     }
 
@@ -25,11 +25,14 @@ class ClientsController extends Controller
         return view('edit', compact('cliente'));
 }
 
+
+
 public function editar(Request $request,$id){
     $cliente = Clients::find($id);
     if(!$cliente){
         abort(code:404);
     }
+   
     
    
     $cliente->nome = $request->nome;
